@@ -1,3 +1,3 @@
-module features {
+module org.geogre {
     exports org.geogre;
 }

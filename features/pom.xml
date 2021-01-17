@@ -5,59 +5,32 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.geogre</groupId>
-    <artifactId>RateMyDev</artifactId>
+    <artifactId>features</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-        <!-- Generic properties -->
         <java.version>15</java.version>
+        <maven.compiler.source>15</maven.compiler.source>
+        <maven.compiler.target>15</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     </properties>
 
     <dependencies>
 
-        <!-- https://mvnrepository.com/artifact/com.jfoenix/jfoenix -->
-        <dependency>
-            <groupId>com.jfoenix</groupId>
-            <artifactId>jfoenix</artifactId>
-            <version>9.0.8</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.jetbrains</groupId>
-            <artifactId>annotations</artifactId>
-            <version>RELEASE</version>
-            <scope>compile</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>org.openjfx</groupId>
-            <artifactId>javafx-fxml</artifactId>
-            <version>12-ea+9</version>
-        </dependency>
-
     </dependencies>
 
     <build>
-
-        <resources>
-            <resource>
-                <directory>src/main/java</directory>
-                <includes>
-                    <include>**/*.fxml</include>
-                </includes>
-            </resource>
-        </resources>
 
         <plugins>
 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
                 <configuration>
-                    <source>12</source>
-                    <target>12</target>
+                    <source>15</source>
+                    <target>15</target>
                 </configuration>
             </plugin>
 

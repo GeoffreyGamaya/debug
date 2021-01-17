@@ -1,4 +1,4 @@
-package com.hello.client;
+package com.hello;
 
 import org.geogre.HelloWorld;
 
