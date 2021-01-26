@@ -3,6 +3,7 @@ package org.geogre;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
+import java.util.TreeMap;
 import java.util.function.BiFunction;
 import java.util.function.BinaryOperator;
 import java.util.function.Function;
@@ -10,25 +11,6 @@ import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 public class FunctionalProgramming {
-
-    interface One {
-        default void method() {
-            System.out.println("One");
-        }
-    }
-
-    interface Two {
-        default void method() {
-            System.out.println("Two");
-        }
-    }
-
-    static class Three implements One, Two {
-        @Override
-        public void method() {
-            One.super.method();
-        }
-    }
 
     public static Integer compine2and3(BiFunction<Integer, Integer, Integer> func) {
         return func.apply(2, 3);
@@ -52,6 +34,9 @@ public class FunctionalProgramming {
     }
 
     public static void main(String[] args) {
+
+        TreeMap<Integer, String> map =  new TreeMap<>();
+
         functionalCourse();
         streamCourse();
     }
@@ -110,9 +95,6 @@ public class FunctionalProgramming {
     }
 
     private static void functionalCourse() {
-        One three = new Three();
-        three.method();
-
         Function<Integer, Integer> doubling = x -> x * 2;
         var result2 = doubling.apply(3);
         System.out.println(result2);
@@ -145,8 +127,8 @@ public class FunctionalProgramming {
         System.out.println(createGreater.apply().apply());
 
         BiFunction<Float, Float, Float> divide = (x, y) -> x / y;
-        Function<BiFunction<Float, Float, Float>, BiFunction<Float, Float, Float>> checkArgument =
-                (func) -> (x, y) -> {
+        Function<BiFunction<Float, Float, Float>, BiFunction<Float, Float, Float>>
+                checkArgument = func -> (x, y) -> {
                     if (y == 0f) {
                         System.out.println("Error second arg is zero");
                         return 0f;
